@@ -1,0 +1,31 @@
+HomeCloud (Android) - Projekt zum Bauen der App
+================================================
+
+Was ist das? Der Quellcode einer echten Android-App (APK). Sie enthaelt die HomeCloud-Oberflaeche und einen
+eingebauten Netzwerk-Zugriff auf FTP/FTPS, SMB (Windows-Freigaben, NAS) und WebDAV - ohne PC-Gateway.
+
+So entsteht die APK (einmalig, ca. 20 Minuten):
+ 1. Android Studio installieren (kostenlos): https://developer.android.com/studio
+ 2. Android Studio starten > "Open" > diesen Ordner (HomeCloud) waehlen.
+ 3. Warten, bis unten "Gradle sync" fertig ist (laedt automatisch SDK und Bibliotheken, Internet noetig).
+    Falls Android Studio fragt, ob es das Projekt/Plugin aktualisieren soll: "Update" bestaetigen.
+ 4. Menue  Build > Build Bundle(s) / APK(s) > Build APK(s).
+ 5. Rechts unten "locate" anklicken: app-debug.apk. Auf das Handy kopieren (USB, Cloud, E-Mail) und antippen.
+    Beim ersten Mal erlaubt Android "Installation aus dieser Quelle" - zulassen.
+
+Alternativ ueber die Kommandozeile (Android SDK vorhanden): gradlew assembleDebug
+Die APK liegt dann in app/build/outputs/apk/debug/app-debug.apk.
+
+Mindestens Android 11, gebaut fuer Android 16 (targetSdk 36).
+Die Web-Oberflaeche liegt in app/src/main/assets/index.html.
+
+
+NEU in Version 1.1: Ordner auf dem Handy/Tablet
+  Hinzufuegen > "Ordner auswaehlen": Android-Ordnerauswahl (auch SD-Karte/USB). Der Ordner mit allen
+  Unterordnern wird als Quelle eingelesen und bleibt gespeichert (neu einlesen: Netzwerk > Quelle > Einlesen).
+
+APK ohne Android Studio bauen (kostenloses GitHub-Konto)
+  1. Auf github.com ein neues, privates Repository anlegen.
+  2. Den INHALT dieses Ordners (inkl. versteckter Ordner .github) hochladen: "Add file > Upload files".
+  3. Reiter "Actions" > "HomeCloud APK bauen" laeuft automatisch (ca. 5-8 Minuten).
+  4. Fertigen Lauf oeffnen > unten "Artifacts" > "HomeCloud-APK" herunterladen > ZIP entpacken > app-debug.apk aufs Handy.
